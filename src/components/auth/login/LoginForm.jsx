@@ -36,7 +36,7 @@ const LoginForm = ({ myEmail }) => {
               className="login-password-form"
               name="password"
               type="password"
-              placeholder="비밀번호"
+              placeholder="비밀 번호"
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);

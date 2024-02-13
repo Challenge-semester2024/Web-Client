@@ -4,6 +4,7 @@ import "styles/auth/register/CenterInfo.scss";
 const CenterInfo = () => {
   const [businessFile, setBusinessFile] = useState();
   const [businessFileName, setBusinessFileName] = useState("");
+  console.log(businessFile);
   return (
     <Form className="center-info-container">
       <div className="ceo-name-container">

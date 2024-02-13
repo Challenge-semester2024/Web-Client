@@ -2,7 +2,7 @@
 
 .login-navigation-container {
   position: relative;
-  top: 425px;
+  top: 555px;
   width: 30%;
   display: flex;
   justify-content: space-between;
@@ -17,7 +17,7 @@
 
 @include laptop {
   .login-navigation-container {
-    top: 405px;
+    top: 500px;
     .register-navigation,
     .account-navigation {
       font-size: 22px;

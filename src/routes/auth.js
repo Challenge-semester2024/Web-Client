@@ -1,7 +1,11 @@
+import CenterInfoPage from "pages/auth/CenterInfoPage";
 import LoginPage, {
   action as loginAction,
   loader as loginLoader,
 } from "pages/auth/LoginPage";
+import RegisterPage, {
+  loader as registerLoader,
+} from "pages/auth/RegisterPage";
 
 const auth = [
   {
@@ -12,6 +16,22 @@ const auth = [
   },
   {
     path: "register",
+    element: <RegisterPage />,
+    loader: registerLoader,
+    children: [
+      {
+        index: true,
+        element: <CenterInfoPage />,
+      },
+      {
+        path: "ceoinfo",
+        element: <RegisterPage />,
+      },
+      {
+        path: "wait",
+        element: <RegisterPage />,
+      },
+    ],
   },
 ];
 

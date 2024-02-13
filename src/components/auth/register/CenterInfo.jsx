@@ -6,23 +6,32 @@ const CenterInfo = () => {
   const [businessFileName, setBusinessFileName] = useState("");
   console.log(businessFile);
   return (
-    <Form className="center-info-container">
+    <Form className="center-info-container" method="post" action="/register">
       <div className="ceo-name-container">
         <span className="ceo-name">대표자명</span>
         <span className="important-sign">*</span>
-        <input placeholder="대표자명" className="ceo-name-input" />
+        <input
+          name="ceo-name"
+          placeholder="대표자명"
+          className="ceo-name-input"
+        />
       </div>
 
       <div className="center-name-container">
         <span className="center-name">기관명</span>
         <span className="important-sign">*</span>
-        <input placeholder="기관명" className="center-name-input" />
+        <input
+          name="center-name"
+          placeholder="기관명"
+          className="center-name-input"
+        />
       </div>
 
       <div className="center-phone-container">
         <span className="center-phone">기관전화번호</span>
         <span className="important-sign">*</span>
         <input
+          name="center-phone"
           placeholder="'-' 빼고 숫자만 입력"
           className="center-phone-input"
         />
@@ -33,6 +42,7 @@ const CenterInfo = () => {
         <span className="important-sign">*</span>
         <div className="center-road-address-container">
           <input
+            name="center-road-address"
             placeholder="기관 주소를 입력"
             className="center-road-address-input"
           />
@@ -42,6 +52,7 @@ const CenterInfo = () => {
         </div>
 
         <input
+          name="center-detail-address"
           placeholder="기관 주소를 입력"
           className="center-detail-address-input"
         />
@@ -55,6 +66,7 @@ const CenterInfo = () => {
         </span>
         <div className="business-certificate-select-container">
           <input
+            name="center-business-certificate"
             id="business-certificate-input"
             type="text"
             placeholder="파일 업로드"

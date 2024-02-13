@@ -1,6 +1,11 @@
 import RegisterHeader from "components/auth/register/RegisterHeader";
 import RegisterStatus from "components/auth/register/RegisterStatus";
-import { Outlet, useLoaderData, useNavigation } from "react-router-dom";
+import {
+  Outlet,
+  redirect,
+  useLoaderData,
+  useNavigation,
+} from "react-router-dom";
 import "styles/auth/register/RegisterPage.scss";
 
 const RegisterPage = () => {
@@ -24,4 +29,21 @@ export const loader = ({ request }) => {
   const currentStatus = pathname.split("/").slice(-1)[0];
 
   return currentStatus;
+};
+
+export const action = async ({ request }) => {
+  const data = await request.formData();
+
+  const CenterData = {
+    ceoName: data.get("ceo-name"),
+    centerName: data.get("center-name"),
+    centerPhone: data.get("center-phone"),
+    centerRoadAddress: data.get("center-road-address"),
+    centerdetailAddress: data.get("center-detail-address"),
+    centerBusinessCertificate: data.get("center-business-certificate"),
+  };
+
+  console.log(CenterData);
+
+  return redirect("ceoinfo");
 };

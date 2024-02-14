@@ -9,6 +9,7 @@ const CeoInfo = () => {
         <div className="ceo-email-input-container">
           <input
             type="email"
+            name="ceo-email"
             placeholder="이메일 입력"
             className="ceo-email-input"
           />
@@ -30,6 +31,7 @@ const CeoInfo = () => {
         <div className="ceo-phone-input-container">
           <input
             type="number"
+            name="ceo-phone"
             placeholder="'-' 빼고 입력"
             className="ceo-phone-input"
           />
@@ -49,6 +51,7 @@ const CeoInfo = () => {
         <span className="important-sign">*</span>
         <input
           type="password"
+          name="ceo-password"
           placeholder="비밀번호 입력"
           className="ceo-password-input"
         />

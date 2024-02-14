@@ -26,4 +26,10 @@ const requestLogin = async (data) => {
   return res;
 };
 
-export { requestLogin };
+const requestRegister = async (data) => {
+  // multipart로 수정 해야함
+  const res = await authAPIInterface("/register", data);
+  return res;
+};
+
+export { requestLogin, requestRegister };

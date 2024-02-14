@@ -1,10 +1,14 @@
+import AddressSearchModal from "commons/modal/AddressSearchModal";
 import { useState } from "react";
 import { Form } from "react-router-dom";
+import { CenterInfoController } from "store/auth";
 import "styles/auth/register/CenterInfo.scss";
 const CenterInfo = () => {
-  const [businessFile, setBusinessFile] = useState();
   const [businessFileName, setBusinessFileName] = useState("");
-  console.log(businessFile);
+  const [roadAddress, setRoadAddress] = useState("");
+  const [isSearchToggle, setIsSearchToggle] = useState(false);
+  const { setBusinessFile } = CenterInfoController.getState();
+
   return (
     <Form className="center-info-container" method="post" action="/register">
       <div className="ceo-name-container">
@@ -45,11 +49,24 @@ const CenterInfo = () => {
             name="center-road-address"
             placeholder="기관 주소를 입력"
             className="center-road-address-input"
+            value={roadAddress}
+            readOnly
           />
-          <button type="button" className="center-road-address-search-btn">
+          <button
+            type="button"
+            className="center-road-address-search-btn"
+            onClick={() => setIsSearchToggle(!isSearchToggle)}
+          >
             주소 검색
           </button>
         </div>
+
+        {isSearchToggle && (
+          <AddressSearchModal
+            onClose={() => setIsSearchToggle(false)}
+            setRoadAddress={setRoadAddress}
+          />
+        )}
 
         <input
           name="center-detail-address"
@@ -87,8 +104,8 @@ const CenterInfo = () => {
             accept=".pdf"
             className="business-certificate-search-btn"
             onChange={(e) => {
-              setBusinessFile(e.target.files[0]);
               setBusinessFileName(e.target.files[0].name);
+              setBusinessFile(e.target.files[0]);
             }}
           />
         </div>

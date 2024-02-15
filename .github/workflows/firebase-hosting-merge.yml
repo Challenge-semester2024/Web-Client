@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Build
+        run: echo "This is a test."
+        env:
+          REACT_APP_KAKAO_MAP_API: ${{ secrets.REACT_APP_KAKAO_MAP_API }}
+          REACT_APP_KAKAO_REST_API: ${{ secrets.REACT_APP_KAKAO_REST_API }}
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

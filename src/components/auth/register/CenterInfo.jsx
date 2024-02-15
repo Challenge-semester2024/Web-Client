@@ -156,7 +156,7 @@ const CenterInfo = () => {
           className="enter-info-submit-btn"
           disabled={!isFormFilled}
         >
-          제출
+          다음
         </button>
       </div>
     </Form>

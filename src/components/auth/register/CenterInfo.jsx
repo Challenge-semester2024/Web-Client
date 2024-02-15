@@ -25,7 +25,14 @@ const CenterInfo = () => {
     ) {
       setIsFormFilled(true);
     }
-  });
+  }, [
+    ceoName,
+    centerName,
+    centerPhone,
+    businessFileName,
+    roadAddress,
+    detailAddress,
+  ]);
 
   return (
     <Form className="center-info-container" method="post" action="/register">

@@ -15,7 +15,7 @@ const CustomTimer = ({ setIsLeft }) => {
     return () => {
       clearInterval(timerId);
     };
-  }, [time]);
+  }, [time, setIsLeft]);
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;

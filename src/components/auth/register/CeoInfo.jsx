@@ -27,7 +27,14 @@ const CeoInfo = () => {
     ) {
       setIsFormFilled(true);
     }
-  });
+  }, [
+    email,
+    emailVerifyNumber,
+    phone,
+    phoneVerifyNumber,
+    password,
+    passwordVerify,
+  ]);
 
   const emailVerify = () => {
     setIsEmailVerify(true);

@@ -6,6 +6,7 @@ import {
   useLoaderData,
   useNavigation,
 } from "react-router-dom";
+import { CenterInfoController } from "store/auth";
 import "styles/auth/register/RegisterPage.scss";
 
 const RegisterPage = () => {
@@ -40,10 +41,10 @@ export const action = async ({ request }) => {
     centerPhone: data.get("center-phone"),
     centerRoadAddress: data.get("center-road-address"),
     centerdetailAddress: data.get("center-detail-address"),
-    centerBusinessCertificate: data.get("center-business-certificate"),
   };
 
-  console.log(CenterData);
+  const { setCenterInfo } = CenterInfoController.getState();
+  setCenterInfo(CenterData);
 
   return redirect("ceoinfo");
 };

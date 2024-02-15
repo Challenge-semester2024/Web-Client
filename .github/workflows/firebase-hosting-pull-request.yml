@@ -10,6 +10,10 @@ jobs:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
     runs-on: ubuntu-latest
     steps:
+      - name: test
+        env:
+          REACT_APP_KAKAO_MAP_API: ${{ secrets.REACT_APP_KAKAO_MAP_API }}
+          REACT_APP_KAKAO_REST_API: ${{ secrets.REACT_APP_KAKAO_REST_API }}
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:

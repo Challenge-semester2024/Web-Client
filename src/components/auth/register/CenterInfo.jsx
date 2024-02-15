@@ -1,13 +1,31 @@
 import AddressSearchModal from "commons/modal/AddressSearchModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form } from "react-router-dom";
 import { CenterInfoController } from "store/auth";
 import "styles/auth/register/CenterInfo.scss";
 const CenterInfo = () => {
+  const [ceoName, setCeoName] = useState("");
+  const [centerName, setCenterName] = useState("");
+  const [centerPhone, setCenterPhone] = useState("");
   const [businessFileName, setBusinessFileName] = useState("");
   const [roadAddress, setRoadAddress] = useState("");
+  const [detailAddress, setDetailAddress] = useState("");
   const [isSearchToggle, setIsSearchToggle] = useState(false);
+  const [isFormFilled, setIsFormFilled] = useState(false);
   const { setBusinessFile } = CenterInfoController.getState();
+
+  useEffect(() => {
+    if (
+      ceoName !== "" &&
+      centerName !== "" &&
+      centerPhone !== "" &&
+      businessFileName !== "" &&
+      roadAddress !== "" &&
+      detailAddress !== ""
+    ) {
+      setIsFormFilled(true);
+    }
+  });
 
   return (
     <Form className="center-info-container" method="post" action="/register">
@@ -18,6 +36,10 @@ const CenterInfo = () => {
           name="ceo-name"
           placeholder="대표자명"
           className="ceo-name-input"
+          value={ceoName}
+          onChange={(e) => {
+            setCeoName(e.target.value);
+          }}
         />
       </div>
 
@@ -28,6 +50,10 @@ const CenterInfo = () => {
           name="center-name"
           placeholder="기관명"
           className="center-name-input"
+          value={centerName}
+          onChange={(e) => {
+            setCenterName(e.target.value);
+          }}
         />
       </div>
 
@@ -38,6 +64,10 @@ const CenterInfo = () => {
           name="center-phone"
           placeholder="'-' 빼고 숫자만 입력"
           className="center-phone-input"
+          value={centerPhone}
+          onChange={(e) => {
+            setCenterPhone(e.target.value);
+          }}
         />
       </div>
 
@@ -72,6 +102,10 @@ const CenterInfo = () => {
           name="center-detail-address"
           placeholder="기관 주소를 입력"
           className="center-detail-address-input"
+          value={detailAddress}
+          onChange={(e) => {
+            setDetailAddress(e.target.value);
+          }}
         />
       </div>
 
@@ -110,7 +144,11 @@ const CenterInfo = () => {
           />
         </div>
 
-        <button type="submit" className="enter-info-submit-btn">
+        <button
+          type="submit"
+          className="enter-info-submit-btn"
+          disabled={!isFormFilled}
+        >
           제출
         </button>
       </div>

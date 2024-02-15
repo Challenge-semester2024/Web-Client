@@ -9,11 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Generate Environment Variables File for Production
+        run: |
+          echo "REACT_APP_KAKAO_MAP_API=$REACT_APP_KAKAO_MAP_API" >> .env.production
+          echo "REACT_APP_KAKAO_REST_API=$REACT_APP_KAKAO_REST_API" >> .env.production
+        env:
+          REACT_APP_KAKAO_MAP_API: ${{ secrets.REACT_APP_KAKAO_MAP_API }}
+          REACT_APP_KAKAO_REST_API: ${{ secrets.REACT_APP_KAKAO_REST_API }}
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHALLENGE_SEMESTER2024 }}"
-          REACT_APP_KAKAO_MAP_API: ${{ secrets.REACT_APP_KAKAO_MAP_API }}
-          REACT_APP_KAKAO_REST_API: ${{ secrets.REACT_APP_KAKAO_REST_API }}
           projectId: challenge-semester2024

@@ -10,13 +10,78 @@
     display: flex;
     height: 83.7%;
 
-    .siderbar-container {
+    .sidebar-container {
       // 사이드바
       width: 15.57%;
       height: 100%;
       background-color: white;
       box-shadow: 15px 0 20px rgba(0, 0, 0, 0.09);
       z-index: 1;
+      overflow: hidden;
+
+      .logo-image {
+        width: 80%;
+      }
+      .frequency-question-image {
+        position: relative;
+        width: 80%;
+        margin-left: 10%;
+        top: 220px;
+      }
+      .volunteer-quick-select-container {
+        width: 100%;
+        display: flex;
+
+        .volunteer-quick-signup-btn,
+        .volunteer-quick-manage-btn {
+          width: 50%;
+          height: 60px;
+          padding: 10px;
+          font-size: 16px;
+          background-color: white;
+          border-style: solid;
+          border-radius: 6px;
+          border-color: #a1aec2;
+          border-width: 1px;
+          color: #94a3b9;
+          font-weight: 800;
+        }
+        .volunteer-quick-signup-btn {
+          margin-left: 23px;
+          margin-right: 6px;
+        }
+        .volunteer-quick-manage-btn {
+          margin-left: 6px;
+          margin-right: 23px;
+        }
+      }
+
+      .home-navigation-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 11.5px;
+        padding: 22px;
+
+        span {
+          font-size: 17.5px;
+          color: #5c6879;
+        }
+        .facility-introduction-container,
+        .volunteer-manage-container,
+        .board-manage-container {
+          height: 43px;
+          margin-bottom: 29px;
+          border-style: none;
+          background-color: white;
+        }
+
+        img {
+          width: 21px;
+
+          margin-right: 14px;
+        }
+      }
     }
 
     .content-container {
@@ -62,6 +127,16 @@
           .profile-image {
             width: 60px;
           }
+          .logout-btn {
+            background-color: #e3e7ec;
+            width: 84px;
+            height: 40px;
+            border-style: none;
+            border-radius: 6px;
+            color: #5c6879;
+            font-size: 14px;
+            font-weight: 800;
+          }
         }
       }
     }
@@ -97,6 +172,31 @@
 @include laptop {
   .homepage-container {
     .homepage-body-container {
+      .sidebar-container {
+        // 사이드바
+        width: 15.57%;
+        height: 100%;
+        background-color: white;
+        box-shadow: 15px 0 20px rgba(0, 0, 0, 0.09);
+        z-index: 1;
+        overflow: hidden;
+
+        .logo-image {
+          width: 80%;
+        }
+        .frequency-question-image {
+          position: relative;
+          width: 80%;
+          margin-left: 10%;
+          top: 160px;
+        }
+        .volunteer-quick-select-container {
+          .volunteer-quick-signup-btn,
+          .volunteer-quick-manage-btn {
+            font-size: 13.5px;
+          }
+        }
+      }
       .content-container {
         // 컨텐츠
         .content-header-container {
@@ -114,6 +214,9 @@
             }
             .profile-image {
               width: 40px;
+            }
+            .logout-btn {
+              font-size: 13px;
             }
           }
         }

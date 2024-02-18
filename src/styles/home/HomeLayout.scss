@@ -12,6 +12,7 @@
 
     .sidebar-container {
       // 사이드바
+      position: relative;
       width: 15.57%;
       height: 100%;
       background-color: white;
@@ -23,10 +24,10 @@
         width: 80%;
       }
       .frequency-question-image {
-        position: relative;
+        position: absolute;
         width: 80%;
         margin-left: 10%;
-        top: 220px;
+        bottom: 25px;
       }
       .volunteer-quick-select-container {
         width: 100%;
@@ -44,7 +45,7 @@
           border-color: #a1aec2;
           border-width: 1px;
           color: #94a3b9;
-          font-weight: 800;
+          font-weight: bolder;
         }
         .volunteer-quick-signup-btn {
           margin-left: 23px;
@@ -53,6 +54,8 @@
         .volunteer-quick-manage-btn {
           margin-left: 6px;
           margin-right: 23px;
+          border-color: #16269e;
+          color: #16269e;
         }
       }
 
@@ -60,26 +63,64 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+
         margin-top: 11.5px;
         padding: 22px;
 
         span {
           font-size: 17.5px;
+          font-weight: 550;
           color: #5c6879;
+          margin-left: 34px;
         }
+
         .facility-introduction-container,
         .volunteer-manage-container,
         .board-manage-container {
-          height: 43px;
+          position: relative;
+          left: 5%;
+          width: 100%;
+          //height: 43px;
           margin-bottom: 29px;
           border-style: none;
           background-color: white;
+
+          .rotate-btn {
+            position: absolute;
+            right: 25px;
+            transition: transform 0.1s ease-in-out;
+            background-color: white;
+            color: #7989ff;
+            border-style: none;
+            font-size: 21px;
+            font-weight: 900;
+            font-family: "inika";
+
+            &.rotated {
+              transform: rotate(90deg);
+            }
+          }
+
+          .detail-page {
+            position: relative;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 33px;
+            margin-top: 13px;
+            a {
+              color: #5c6879;
+              font-size: 15px;
+              text-decoration: none;
+              margin-bottom: 10px;
+            }
+          }
         }
 
         img {
+          position: absolute;
           width: 21px;
-
-          margin-right: 14px;
+          margin-top: 1px;
         }
       }
     }
@@ -184,16 +225,36 @@
         .logo-image {
           width: 80%;
         }
-        .frequency-question-image {
-          position: relative;
-          width: 80%;
-          margin-left: 10%;
-          top: 160px;
-        }
+
         .volunteer-quick-select-container {
           .volunteer-quick-signup-btn,
           .volunteer-quick-manage-btn {
             font-size: 13.5px;
+            height: 52px;
+          }
+        }
+        .home-navigation-container {
+          span {
+            font-size: 16px;
+          }
+          .facility-introduction-container,
+          .volunteer-manage-container,
+          .board-manage-container {
+            .rotate-btn {
+              font-size: 19px;
+            }
+            .detail-page {
+              margin-top: 10px;
+              a {
+                font-size: 15px;
+                margin-bottom: 10px;
+              }
+            }
+          }
+
+          img {
+            width: 19px;
+            margin-top: 1px;
           }
         }
       }

@@ -9,7 +9,6 @@ const HomeSidebar = () => {
   const [showfacilityDetail, setShowfacilityDetail] = useState(false);
   const [showVolunteerDetail, setShowVolunteerDetail] = useState(false);
   const [showBorderDetail, setShowBorderDetail] = useState(false);
-  console.log(showfacilityDetail);
   return (
     <div className="sidebar-container">
       <img className="logo-image" src={logo} alt="logo" />
@@ -33,9 +32,9 @@ const HomeSidebar = () => {
           </button>
           {showfacilityDetail && (
             <div className="detail-page">
-              <Link to="greeting">인사말</Link>
+              <Link to="facility/greeting">인사말</Link>
               <Link to="facility/introduction">시설소개</Link>
-              <Link to="route-info">찾아오는 길</Link>
+              <Link to="facility/route-info">찾아오는 길</Link>
             </div>
           )}
         </div>

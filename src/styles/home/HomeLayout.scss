@@ -8,7 +8,7 @@
 
   .homepage-body-container {
     display: flex;
-    height: 83.7%;
+    height: 100%;
 
     .sidebar-container {
       // 사이드바
@@ -180,32 +180,6 @@
           }
         }
       }
-    }
-  }
-
-  .homepage-footer-container {
-    height: 16.3%;
-    background-color: #333333;
-    display: flex;
-
-    .site-info-container {
-      margin-top: 20px;
-      margin-left: 40px;
-      margin-right: 60px;
-    }
-    .site-detail-info-container {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      .reserve-tag {
-        margin-top: 10px;
-      }
-    }
-
-    span {
-      font-size: 14px;
-      font-weight: 700;
-      color: #898b9a;
     }
   }
 }

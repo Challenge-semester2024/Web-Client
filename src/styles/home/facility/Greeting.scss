@@ -5,10 +5,11 @@
 .greeting-container {
   position: relative;
   height: 100%;
+  width: 100%;
   .greeting-content-container,
   .history-content-container {
     position: relative;
-    width: 94.31%;
+    width: 100%;
     left: 2.7%;
   }
   .greeting-content-container {
@@ -50,7 +51,7 @@
   .history-container {
     position: absolute;
     height: 69.33%;
-    width: 94.31%;
+    width: 100%;
     left: 2.7%;
 
     .history-content-container {

@@ -1,4 +1,3 @@
-import HomeFooter from "components/home/HomeFooter";
 import HomeHeader from "components/home/HomeHeader";
 import HomeSidebar from "components/home/HomeSidebar";
 import { Outlet } from "react-router-dom";
@@ -12,9 +11,6 @@ const HomeLayout = () => {
           <HomeHeader />
           <Outlet />
         </div>
-      </div>
-      <div className="homepage-footer-container">
-        <HomeFooter />
       </div>
     </div>
   );

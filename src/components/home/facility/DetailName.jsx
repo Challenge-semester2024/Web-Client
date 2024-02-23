@@ -1,6 +1,5 @@
 const DetailName = ({ path }) => {
   let content1, content2;
-  console.log(path);
   switch (path) {
     case "greeting":
       content1 = "인사말";

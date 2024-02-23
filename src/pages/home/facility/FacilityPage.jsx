@@ -11,7 +11,6 @@ const FacilityPage = () => {
   const isIntroduction = lastPath === "introduction" ? "active" : "";
   const isRouteInfo = lastPath === "route-info" ? "active" : "";
 
-  console.log(lastPath);
   return (
     <div className="facility-container">
       <div className="facility-introduction-title">시설 소개</div>

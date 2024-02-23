@@ -4,11 +4,20 @@ import frequencyQuestion from "assets/frequency_questions.png";
 import logo from "assets/logo.png";
 import volunteerIcon from "assets/volunteer.png";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const HomeSidebar = () => {
   const [showfacilityDetail, setShowfacilityDetail] = useState(false);
   const [showVolunteerDetail, setShowVolunteerDetail] = useState(false);
   const [showBorderDetail, setShowBorderDetail] = useState(false);
+
+  const location = useLocation();
+  const lastPath = location.pathname.substring(
+    location.pathname.lastIndexOf("/") + 1
+  );
+  const isGreeting = lastPath === "greeting" ? "active" : "";
+  const isIntroduction = lastPath === "introduction" ? "active" : "";
+  const isRouteInfo = lastPath === "route-info" ? "active" : "";
+
   return (
     <div className="sidebar-container">
       <img className="logo-image" src={logo} alt="logo" />
@@ -32,9 +41,15 @@ const HomeSidebar = () => {
           </button>
           {showfacilityDetail && (
             <div className="detail-page">
-              <Link to="facility/greeting">인사말</Link>
-              <Link to="facility/introduction">시설소개</Link>
-              <Link to="facility/route-info">찾아오는 길</Link>
+              <Link to="facility/greeting" className={isGreeting}>
+                인사말
+              </Link>
+              <Link to="facility/introduction" className={isIntroduction}>
+                시설소개
+              </Link>
+              <Link to="facility/route-info" className={isRouteInfo}>
+                찾아오는 길
+              </Link>
             </div>
           )}
         </div>

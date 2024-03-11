@@ -133,6 +133,22 @@
         font-size: 15px;
         margin-right: 20px;
       }
+
+      .recruiting-state-btn.active {
+        // 버튼 클릭
+        background-color: #0075ff;
+        border-color: #0075ff;
+        .check1 {
+          stroke: white;
+        }
+      }
+      .recruited-state-btn.active {
+        background-color: #0075ff;
+        border-color: #0075ff;
+        .check2 {
+          stroke: white;
+        }
+      }
     }
   }
 
@@ -165,6 +181,16 @@
       background-color: #f3f3f3;
     }
 
+    .volunteer-title, // 마우스 올리면 포인터
+    .volunteer-period {
+      cursor: pointer;
+    }
+
+    .volunteer-title:hover, // 마우스 올리면 밑줄
+    .volunteer-period:hover {
+      text-decoration: underline;
+    }
+
     th:nth-child(1),
     td:nth-child(1) {
       width: 7%;
@@ -174,7 +200,6 @@
     th:nth-child(2),
     td:nth-child(2) {
       width: 40%;
-      //background-color: #898c9a;
     }
 
     th:nth-child(3),

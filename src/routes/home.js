@@ -4,6 +4,8 @@ import FacilityPage from "pages/home/facility/FacilityPage";
 import GreetingPage from "pages/home/facility/GreetingPage";
 import IntroductionPage from "pages/home/facility/IntroductionPage";
 import RouteInfoPage from "pages/home/facility/RouteInfoPage";
+import VolunteerLayout from "pages/home/volunteer/VolunteerLayout";
+import VolunteerListPage from "pages/home/volunteer/VolunteerListPage";
 
 const home = [
   {
@@ -29,6 +31,16 @@ const home = [
           {
             path: "route-info",
             element: <RouteInfoPage />,
+          },
+        ],
+      },
+      {
+        path: "volunteer",
+        element: <VolunteerLayout />,
+        children: [
+          {
+            path: "list",
+            element: <VolunteerListPage />,
           },
         ],
       },

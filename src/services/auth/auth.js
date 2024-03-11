@@ -8,13 +8,17 @@ import { SERVER_IP } from "constants/api";
  * @param {String} params 쿼리 데이터
  * @returns 응답 객체
  */
-const authAPIInterface = async (url, data = null, params = null) => {
+const authAPIInterface = async (
+  url,
+  signUpDto = null,
+  params = null,
+  contentType = "application/json"
+) => {
   try {
-    const res = await axios.post(`${SERVER_IP}${url}`, data, {
-      headers: { "Content-Type": "application/json" },
+    const res = await axios.post(`${SERVER_IP}/${url}`, signUpDto, {
+      headers: { "Content-Type": contentType },
     });
 
-    console.log(res);
     return res.data;
   } catch (e) {
     console.error("error : ", e);
@@ -26,9 +30,26 @@ const requestLogin = async (data) => {
   return res;
 };
 
-const requestRegister = async (data) => {
-  // multipart로 수정 해야함
-  const res = await authAPIInterface("/register", data);
+const requestRegister = async (registerInfo) => {
+  let formData = new FormData();
+
+  let { centerInfo, ceoInfo, certificateFile } = registerInfo;
+  const signUpDto = {
+    centerInfo,
+    ceoInfo,
+  };
+
+  const json = JSON.stringify(signUpDto);
+  const blob = new Blob([json], { type: "application/json" });
+  formData.append("signUpDto", blob);
+  formData.append("certificateFile", certificateFile);
+
+  const res = await authAPIInterface(
+    "api/auth/signUp",
+    formData,
+    null,
+    "multipart/form-data"
+  );
   return res;
 };
 

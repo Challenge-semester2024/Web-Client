@@ -6,14 +6,14 @@ export const userToken = create((set) => ({
 }));
 
 export const CenterInfoController = create((set) => ({
-  file2: null,
-  CenterInfo: {
+  certificateFile: null,
+  centerInfo: {
     ceoName: "",
     centerName: "",
-    centerPhone: "",
-    centerRoadAddress: "",
-    centerdetailAddress: "",
+    phoneNum: "",
+    roadAddress: "",
+    detailAddress: "",
   },
-  setBusinessFile: (file) => set({ file2: file }),
-  setCenterInfo: (CenterInfo) => set({ CenterInfo }),
+  setBusinessFile: (file) => set({ certificateFile: file }),
+  setCenterInfo: (centerInfo) => set({ centerInfo }),
 }));

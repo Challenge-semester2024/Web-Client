@@ -12,19 +12,22 @@ export default CeoInfoPage;
 export const action = async ({ request }) => {
   const data = await request.formData();
 
-  const CeoInfo = {
-    ceoEmail: data.get("ceo-email"),
-    centerName: data.get("ceo-phone"),
-    centerPhone: data.get("ceo-password"),
+  const ceoInfo = {
+    email: data.get("ceo-email"),
+    emailVerificationCode: data.get("ceo-email-verify-input"),
+    phoneNum: data.get("ceo-phone"),
+    phoneVerificationCode: data.get("ceo-phone-verify-input"),
+    password: data.get("ceo-password"),
   };
 
-  const { file2, CenterInfo } = CenterInfoController.getState();
+  const { certificateFile, centerInfo } = CenterInfoController.getState();
   const registerInfo = {
-    CenterInfo,
-    CeoInfo,
-    file2,
+    centerInfo,
+    ceoInfo,
+    certificateFile,
   };
 
+  console.log(registerInfo);
   const res = await requestRegister(registerInfo);
   if (res === 200) {
     return redirect("/register/wait");

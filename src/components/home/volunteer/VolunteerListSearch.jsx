@@ -5,6 +5,8 @@ import { useState } from "react";
 const VolunteerListSearch = () => {
   const [isRecruiting, setIsRecruiting] = useState(true);
   const [isRecruited, setIsRecruited] = useState(true);
+
+  console.log(isRecruited);
   return (
     <div className="volunteer-list-search-container">
       <div className="volunteer-list-search-word-container">
@@ -69,6 +71,7 @@ const VolunteerListSearch = () => {
             fill="none"
           >
             <path
+              className="check1"
               d="M1.34375 8.16948L7.70305 16.7304L18.4648 1.56445"
               stroke="grey"
               strokeWidth="3"
@@ -76,7 +79,7 @@ const VolunteerListSearch = () => {
             />
           </svg>
         </button>
-        <span className="recruiting-state">모집 예정</span>
+        <span className="recruiting-state">모집 중</span>
 
         <button
           type="button"
@@ -94,6 +97,7 @@ const VolunteerListSearch = () => {
             fill="none"
           >
             <path
+              className="check2"
               d="M1.34375 8.16948L7.70305 16.7304L18.4648 1.56445"
               stroke="grey"
               strokeWidth="3"
@@ -101,7 +105,7 @@ const VolunteerListSearch = () => {
             />
           </svg>
         </button>
-        <span className="recruited-state">모집중</span>
+        <span className="recruited-state">모집완료</span>
       </div>
     </div>
   );

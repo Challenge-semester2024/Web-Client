@@ -93,6 +93,7 @@ const CeoInfo = () => {
         </div>
         <input
           type="password"
+          name="ceo-email-verify-input"
           placeholder="인증번호 4자리 입력"
           className="ceo-email-verify-input"
           disabled={!isEmailVerify}
@@ -128,6 +129,7 @@ const CeoInfo = () => {
         </div>
         <input
           type="password"
+          name="ceo-phone-verify-input"
           placeholder="인증번호 4자리 입력"
           className="ceo-phone-verify-input"
           disabled={!isPhoneVerify}

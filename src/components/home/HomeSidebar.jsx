@@ -67,8 +67,8 @@ const HomeSidebar = () => {
           </button>
           {showVolunteerDetail && (
             <div className="detail-page">
-              <Link to="volunteer/recruitment/list">봉사 공고 목록</Link>
-              <Link to="volunteer/recruitment/signup">봉사 공고 등록</Link>
+              <Link to="volunteer/list">봉사 공고 목록</Link>
+              <Link to="volunteer/upload">봉사 공고 등록</Link>
               <Link to="volunteer/manage">봉사자 관리</Link>
             </div>
           )}

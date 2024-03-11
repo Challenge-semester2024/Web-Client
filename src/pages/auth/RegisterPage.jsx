@@ -35,16 +35,16 @@ export const loader = ({ request }) => {
 export const action = async ({ request }) => {
   const data = await request.formData();
 
-  const CenterData = {
+  const centerInfo = {
     ceoName: data.get("ceo-name"),
     centerName: data.get("center-name"),
-    centerPhone: data.get("center-phone"),
-    centerRoadAddress: data.get("center-road-address"),
-    centerdetailAddress: data.get("center-detail-address"),
+    phoneNum: data.get("center-phone"),
+    roadAddress: data.get("center-road-address"),
+    detailAddress: data.get("center-detail-address"),
   };
 
   const { setCenterInfo } = CenterInfoController.getState();
-  setCenterInfo(CenterData);
+  setCenterInfo(centerInfo);
 
   return redirect("ceoinfo");
 };

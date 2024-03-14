@@ -1,0 +1,74 @@
+@import "/src/styles/media/mixin";
+
+//desktop (1920px ~ 1080px)
+
+.volunteer-upload-page-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  // 제목
+  .volunteer-upload-page-title {
+    position: relative;
+    margin-left: 1.94%;
+    margin-top: 1.23%;
+    font-size: 17px;
+    font-weight: 800;
+  }
+
+  // 상단 네비게이션 바
+  .navigation-bar-container {
+    position: relative;
+    margin-top: 1.4%;
+    height: 4.58%;
+
+    border-bottom: 1px solid #d6dce5;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20%;
+    padding-right: 20%;
+    .navigation-bar {
+      position: relative;
+      text-align: center;
+      top: 5%;
+      font-size: 17;
+      width: 30%;
+    }
+    .active {
+      font-weight: 800;
+      border-bottom: 2px solid;
+    }
+  }
+  .volunteer-upload-detail-container {
+    position: relative;
+    width: 22.19%;
+    height: 82.39%;
+    .volunteer-upload-detail-name-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin-left: 8.5%;
+      margin-top: 7%;
+      border-right: 1px solid #d6dce5;
+      font-size: 17px;
+      font-weight: 700;
+
+      .content1 {
+        position: relative;
+        padding-top: 7%;
+      }
+      .content2 {
+        position: relative;
+        top: 10%;
+      }
+      .content3 {
+        position: relative;
+        top: 55%;
+      }
+    }
+  }
+}
+
+@include laptop {
+  .volunteer-upload-page-container {
+  }
+}
